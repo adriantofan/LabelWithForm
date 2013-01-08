@@ -134,9 +134,8 @@
 		40433F40169CA5B00057020F = {
 			isa = PBXGroup;
 			children = (
+				40433FCF169CAFA30057020F /* Example */,
 				40433F84169CA5FC0057020F /* Classes */,
-				40433F55169CA5B00057020F /* LabelWithFormExample */,
-				40433F73169CA5B10057020F /* LabelWithFormTests */,
 				40433F4E169CA5B00057020F /* Frameworks */,
 				40433F4C169CA5B00057020F /* Products */,
 			);
@@ -219,7 +218,8 @@
 				40433F8F169CA6500057020F /* Separators */,
 				40433F85169CA61D0057020F /* LineContainers */,
 			);
-			path = Classes;
+			name = Classes;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
 		40433F85169CA61D0057020F /* LineContainers */ = {
@@ -259,6 +259,15 @@
 				40433FC3169CADF40057020F /* ATTableViewController.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		40433FCF169CAFA30057020F /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				40433F55169CA5B00057020F /* LabelWithFormExample */,
+				40433F73169CA5B10057020F /* LabelWithFormTests */,
+			);
+			name = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,6 +579,7 @@
 				40433F80169CA5B10057020F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40433F81169CA5B10057020F /* Build configuration list for PBXNativeTarget "LabelWithFormTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +588,7 @@
 				40433F83169CA5B10057020F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
