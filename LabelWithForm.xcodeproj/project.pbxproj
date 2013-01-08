@@ -21,6 +21,32 @@
 		40433F70169CA5B10057020F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40433F51169CA5B00057020F /* Foundation.framework */; };
 		40433F78169CA5B10057020F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40433F76169CA5B10057020F /* InfoPlist.strings */; };
 		40433F7B169CA5B10057020F /* LabelWithFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F7A169CA5B10057020F /* LabelWithFormTests.m */; };
+		40433F8C169CA63A0057020F /* ATLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F87169CA63A0057020F /* ATLineContainer.m */; };
+		40433F8D169CA63A0057020F /* ATTextFieldLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F89169CA63A0057020F /* ATTextFieldLineContainer.m */; };
+		40433F8E169CA63A0057020F /* ATTwoTextFieldsLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F8B169CA63A0057020F /* ATTwoTextFieldsLineContainer.m */; };
+		40433F96169CA6610057020F /* ATHorizontalSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F91169CA6610057020F /* ATHorizontalSeparator.m */; };
+		40433F97169CA6610057020F /* ATVerticalSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F93169CA6610057020F /* ATVerticalSeparator.m */; };
+		40433F98169CA6610057020F /* ATSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F95169CA6610057020F /* ATSeparator.m */; };
+		40433FA0169CA6790057020F /* ATLabelWithFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9A169CA6790057020F /* ATLabelWithFormCell.m */; };
+		40433FA1169CA6790057020F /* ATListViewTextFieldControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9C169CA6790057020F /* ATListViewTextFieldControler.m */; };
+		40433FA2169CA6790057020F /* ATListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9E169CA6790057020F /* ATListView.m */; };
+		40433FA3169CA6900057020F /* ATLabelWithFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9A169CA6790057020F /* ATLabelWithFormCell.m */; };
+		40433FA4169CA6900057020F /* ATListViewTextFieldControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9C169CA6790057020F /* ATListViewTextFieldControler.m */; };
+		40433FA5169CA6900057020F /* ATListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F9E169CA6790057020F /* ATListView.m */; };
+		40433FA6169CA6960057020F /* ATHorizontalSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F91169CA6610057020F /* ATHorizontalSeparator.m */; };
+		40433FA7169CA6960057020F /* ATVerticalSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F93169CA6610057020F /* ATVerticalSeparator.m */; };
+		40433FA8169CA6960057020F /* ATSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F95169CA6610057020F /* ATSeparator.m */; };
+		40433FA9169CA69A0057020F /* ATLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F87169CA63A0057020F /* ATLineContainer.m */; };
+		40433FAA169CA69A0057020F /* ATTextFieldLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F89169CA63A0057020F /* ATTextFieldLineContainer.m */; };
+		40433FAB169CA69A0057020F /* ATTwoTextFieldsLineContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433F8B169CA63A0057020F /* ATTwoTextFieldsLineContainer.m */; };
+		40433FAE169CA6AC0057020F /* ATAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FAD169CA6AC0057020F /* ATAddressCell.m */; };
+		40433FAF169CA6AC0057020F /* ATAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FAD169CA6AC0057020F /* ATAddressCell.m */; };
+		40433FB2169CA6F60057020F /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 40433FB0169CA6F60057020F /* vertical_separator.png */; };
+		40433FB3169CA6F60057020F /* vertical_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 40433FB0169CA6F60057020F /* vertical_separator.png */; };
+		40433FB4169CA6F60057020F /* horisontal_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 40433FB1169CA6F60057020F /* horisontal_separator.png */; };
+		40433FB5169CA6F60057020F /* horisontal_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = 40433FB1169CA6F60057020F /* horisontal_separator.png */; };
+		40433FB9169CA73C0057020F /* ATTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FB7169CA73C0057020F /* ATTableViewController.m */; };
+		40433FBA169CA73C0057020F /* ATTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FB7169CA73C0057020F /* ATTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		40433F4B169CA5B00057020F /* LabelWithForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelWithForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40433F4B169CA5B00057020F /* LabelWithFormExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelWithFormExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40433F4F169CA5B00057020F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40433F51169CA5B00057020F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40433F53169CA5B00057020F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +79,31 @@
 		40433F77169CA5B10057020F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40433F79169CA5B10057020F /* LabelWithFormTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelWithFormTests.h; sourceTree = "<group>"; };
 		40433F7A169CA5B10057020F /* LabelWithFormTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelWithFormTests.m; sourceTree = "<group>"; };
+		40433F86169CA63A0057020F /* ATLineContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATLineContainer.h; sourceTree = "<group>"; };
+		40433F87169CA63A0057020F /* ATLineContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATLineContainer.m; sourceTree = "<group>"; };
+		40433F88169CA63A0057020F /* ATTextFieldLineContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTextFieldLineContainer.h; sourceTree = "<group>"; };
+		40433F89169CA63A0057020F /* ATTextFieldLineContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTextFieldLineContainer.m; sourceTree = "<group>"; };
+		40433F8A169CA63A0057020F /* ATTwoTextFieldsLineContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTwoTextFieldsLineContainer.h; sourceTree = "<group>"; };
+		40433F8B169CA63A0057020F /* ATTwoTextFieldsLineContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTwoTextFieldsLineContainer.m; sourceTree = "<group>"; };
+		40433F90169CA6610057020F /* ATHorizontalSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATHorizontalSeparator.h; sourceTree = "<group>"; };
+		40433F91169CA6610057020F /* ATHorizontalSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATHorizontalSeparator.m; sourceTree = "<group>"; };
+		40433F92169CA6610057020F /* ATVerticalSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVerticalSeparator.h; sourceTree = "<group>"; };
+		40433F93169CA6610057020F /* ATVerticalSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATVerticalSeparator.m; sourceTree = "<group>"; };
+		40433F94169CA6610057020F /* ATSeparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATSeparator.h; sourceTree = "<group>"; };
+		40433F95169CA6610057020F /* ATSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATSeparator.m; sourceTree = "<group>"; };
+		40433F99169CA6790057020F /* ATLabelWithFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATLabelWithFormCell.h; sourceTree = "<group>"; };
+		40433F9A169CA6790057020F /* ATLabelWithFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATLabelWithFormCell.m; sourceTree = "<group>"; };
+		40433F9B169CA6790057020F /* ATListViewTextFieldControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATListViewTextFieldControler.h; sourceTree = "<group>"; };
+		40433F9C169CA6790057020F /* ATListViewTextFieldControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATListViewTextFieldControler.m; sourceTree = "<group>"; };
+		40433F9D169CA6790057020F /* ATListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATListView.h; sourceTree = "<group>"; };
+		40433F9E169CA6790057020F /* ATListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATListView.m; sourceTree = "<group>"; };
+		40433F9F169CA6790057020F /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		40433FAC169CA6AC0057020F /* ATAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATAddressCell.h; sourceTree = "<group>"; };
+		40433FAD169CA6AC0057020F /* ATAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAddressCell.m; sourceTree = "<group>"; };
+		40433FB0169CA6F60057020F /* vertical_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical_separator.png; sourceTree = "<group>"; };
+		40433FB1169CA6F60057020F /* horisontal_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horisontal_separator.png; sourceTree = "<group>"; };
+		40433FB6169CA73C0057020F /* ATTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTableViewController.h; sourceTree = "<group>"; };
+		40433FB7169CA73C0057020F /* ATTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +133,8 @@
 		40433F40169CA5B00057020F = {
 			isa = PBXGroup;
 			children = (
-				40433F55169CA5B00057020F /* LabelWithForm */,
+				40433F84169CA5FC0057020F /* src */,
+				40433F55169CA5B00057020F /* LabelWithFormExample */,
 				40433F73169CA5B10057020F /* LabelWithFormTests */,
 				40433F4E169CA5B00057020F /* Frameworks */,
 				40433F4C169CA5B00057020F /* Products */,
@@ -92,7 +144,7 @@
 		40433F4C169CA5B00057020F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				40433F4B169CA5B00057020F /* LabelWithForm.app */,
+				40433F4B169CA5B00057020F /* LabelWithFormExample.app */,
 				40433F6C169CA5B10057020F /* LabelWithFormTests.octest */,
 			);
 			name = Products;
@@ -109,13 +161,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		40433F55169CA5B00057020F /* LabelWithForm */ = {
+		40433F55169CA5B00057020F /* LabelWithFormExample */ = {
 			isa = PBXGroup;
 			children = (
+				40433FAC169CA6AC0057020F /* ATAddressCell.h */,
+				40433FAD169CA6AC0057020F /* ATAddressCell.m */,
 				40433F5E169CA5B10057020F /* ATAppDelegate.h */,
 				40433F5F169CA5B10057020F /* ATAppDelegate.m */,
 				40433F56169CA5B00057020F /* Supporting Files */,
+				40433FB6169CA73C0057020F /* ATTableViewController.h */,
+				40433FB7169CA73C0057020F /* ATTableViewController.m */,
 			);
+			name = LabelWithFormExample;
 			path = LabelWithForm;
 			sourceTree = "<group>";
 		};
@@ -152,12 +209,56 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		40433F84169CA5FC0057020F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				40433FB0169CA6F60057020F /* vertical_separator.png */,
+				40433FB1169CA6F60057020F /* horisontal_separator.png */,
+				40433F99169CA6790057020F /* ATLabelWithFormCell.h */,
+				40433F9A169CA6790057020F /* ATLabelWithFormCell.m */,
+				40433F9B169CA6790057020F /* ATListViewTextFieldControler.h */,
+				40433F9C169CA6790057020F /* ATListViewTextFieldControler.m */,
+				40433F9D169CA6790057020F /* ATListView.h */,
+				40433F9E169CA6790057020F /* ATListView.m */,
+				40433F9F169CA6790057020F /* Layout.h */,
+				40433F8F169CA6500057020F /* Separators */,
+				40433F85169CA61D0057020F /* LineContainers */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		40433F85169CA61D0057020F /* LineContainers */ = {
+			isa = PBXGroup;
+			children = (
+				40433F86169CA63A0057020F /* ATLineContainer.h */,
+				40433F87169CA63A0057020F /* ATLineContainer.m */,
+				40433F88169CA63A0057020F /* ATTextFieldLineContainer.h */,
+				40433F89169CA63A0057020F /* ATTextFieldLineContainer.m */,
+				40433F8A169CA63A0057020F /* ATTwoTextFieldsLineContainer.h */,
+				40433F8B169CA63A0057020F /* ATTwoTextFieldsLineContainer.m */,
+			);
+			name = LineContainers;
+			sourceTree = "<group>";
+		};
+		40433F8F169CA6500057020F /* Separators */ = {
+			isa = PBXGroup;
+			children = (
+				40433F90169CA6610057020F /* ATHorizontalSeparator.h */,
+				40433F91169CA6610057020F /* ATHorizontalSeparator.m */,
+				40433F92169CA6610057020F /* ATVerticalSeparator.h */,
+				40433F93169CA6610057020F /* ATVerticalSeparator.m */,
+				40433F94169CA6610057020F /* ATSeparator.h */,
+				40433F95169CA6610057020F /* ATSeparator.m */,
+			);
+			name = Separators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		40433F4A169CA5B00057020F /* LabelWithForm */ = {
+		40433F4A169CA5B00057020F /* LabelWithFormExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40433F7E169CA5B10057020F /* Build configuration list for PBXNativeTarget "LabelWithForm" */;
+			buildConfigurationList = 40433F7E169CA5B10057020F /* Build configuration list for PBXNativeTarget "LabelWithFormExample" */;
 			buildPhases = (
 				40433F47169CA5B00057020F /* Sources */,
 				40433F48169CA5B00057020F /* Frameworks */,
@@ -167,9 +268,9 @@
 			);
 			dependencies = (
 			);
-			name = LabelWithForm;
+			name = LabelWithFormExample;
 			productName = LabelWithForm;
-			productReference = 40433F4B169CA5B00057020F /* LabelWithForm.app */;
+			productReference = 40433F4B169CA5B00057020F /* LabelWithFormExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		40433F6B169CA5B10057020F /* LabelWithFormTests */ = {
@@ -213,7 +314,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				40433F4A169CA5B00057020F /* LabelWithForm */,
+				40433F4A169CA5B00057020F /* LabelWithFormExample */,
 				40433F6B169CA5B10057020F /* LabelWithFormTests */,
 			);
 		};
@@ -228,6 +329,8 @@
 				40433F62169CA5B10057020F /* Default.png in Resources */,
 				40433F64169CA5B10057020F /* Default@2x.png in Resources */,
 				40433F66169CA5B10057020F /* Default-568h@2x.png in Resources */,
+				40433FB2169CA6F60057020F /* vertical_separator.png in Resources */,
+				40433FB4169CA6F60057020F /* horisontal_separator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +339,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40433F78169CA5B10057020F /* InfoPlist.strings in Resources */,
+				40433FB3169CA6F60057020F /* vertical_separator.png in Resources */,
+				40433FB5169CA6F60057020F /* horisontal_separator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +369,17 @@
 			files = (
 				40433F5C169CA5B00057020F /* main.m in Sources */,
 				40433F60169CA5B10057020F /* ATAppDelegate.m in Sources */,
+				40433F8C169CA63A0057020F /* ATLineContainer.m in Sources */,
+				40433F8D169CA63A0057020F /* ATTextFieldLineContainer.m in Sources */,
+				40433F8E169CA63A0057020F /* ATTwoTextFieldsLineContainer.m in Sources */,
+				40433FA3169CA6900057020F /* ATLabelWithFormCell.m in Sources */,
+				40433FA4169CA6900057020F /* ATListViewTextFieldControler.m in Sources */,
+				40433FA5169CA6900057020F /* ATListView.m in Sources */,
+				40433FA6169CA6960057020F /* ATHorizontalSeparator.m in Sources */,
+				40433FA7169CA6960057020F /* ATVerticalSeparator.m in Sources */,
+				40433FA8169CA6960057020F /* ATSeparator.m in Sources */,
+				40433FAE169CA6AC0057020F /* ATAddressCell.m in Sources */,
+				40433FB9169CA73C0057020F /* ATTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +388,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				40433F7B169CA5B10057020F /* LabelWithFormTests.m in Sources */,
+				40433F96169CA6610057020F /* ATHorizontalSeparator.m in Sources */,
+				40433F97169CA6610057020F /* ATVerticalSeparator.m in Sources */,
+				40433F98169CA6610057020F /* ATSeparator.m in Sources */,
+				40433FA0169CA6790057020F /* ATLabelWithFormCell.m in Sources */,
+				40433FA1169CA6790057020F /* ATListViewTextFieldControler.m in Sources */,
+				40433FA2169CA6790057020F /* ATListView.m in Sources */,
+				40433FA9169CA69A0057020F /* ATLineContainer.m in Sources */,
+				40433FAA169CA69A0057020F /* ATTextFieldLineContainer.m in Sources */,
+				40433FAB169CA69A0057020F /* ATTwoTextFieldsLineContainer.m in Sources */,
+				40433FAF169CA6AC0057020F /* ATAddressCell.m in Sources */,
+				40433FBA169CA73C0057020F /* ATTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +407,7 @@
 /* Begin PBXTargetDependency section */
 		40433F72169CA5B10057020F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 40433F4A169CA5B00057020F /* LabelWithForm */;
+			target = 40433F4A169CA5B00057020F /* LabelWithFormExample */;
 			targetProxy = 40433F71169CA5B10057020F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -364,6 +491,7 @@
 				GCC_PREFIX_HEADER = "LabelWithForm/LabelWithForm-Prefix.pch";
 				INFOPLIST_FILE = "LabelWithForm/LabelWithForm-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -375,6 +503,7 @@
 				GCC_PREFIX_HEADER = "LabelWithForm/LabelWithForm-Prefix.pch";
 				INFOPLIST_FILE = "LabelWithForm/LabelWithForm-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -425,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40433F7E169CA5B10057020F /* Build configuration list for PBXNativeTarget "LabelWithForm" */ = {
+		40433F7E169CA5B10057020F /* Build configuration list for PBXNativeTarget "LabelWithFormExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				40433F7F169CA5B10057020F /* Debug */,
