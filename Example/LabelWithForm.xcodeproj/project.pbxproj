@@ -48,6 +48,10 @@
 		40433FC7169CADF40057020F /* ATAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FC1169CADF40057020F /* ATAppDelegate.m */; };
 		40433FC8169CADF40057020F /* ATTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FC3169CADF40057020F /* ATTableViewController.m */; };
 		40433FC9169CADF40057020F /* ATTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FC3169CADF40057020F /* ATTableViewController.m */; };
+		40433FD3169D618D0057020F /* ATFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FD2169D618D0057020F /* ATFormTableViewController.m */; };
+		40433FD8169D628C0057020F /* ATMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FD6169D628C0057020F /* ATMainViewController.m */; };
+		40433FD9169D628C0057020F /* ATMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40433FD7169D628C0057020F /* ATMainViewController.xib */; };
+		40433FDC169D64E00057020F /* ATFullTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40433FDB169D64E00057020F /* ATFullTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,13 @@
 		40433FC1169CADF40057020F /* ATAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATAppDelegate.m; sourceTree = "<group>"; };
 		40433FC2169CADF40057020F /* ATTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTableViewController.h; sourceTree = "<group>"; };
 		40433FC3169CADF40057020F /* ATTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTableViewController.m; sourceTree = "<group>"; };
+		40433FD1169D618D0057020F /* ATFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATFormTableViewController.h; sourceTree = "<group>"; };
+		40433FD2169D618D0057020F /* ATFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATFormTableViewController.m; sourceTree = "<group>"; };
+		40433FD5169D628C0057020F /* ATMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATMainViewController.h; sourceTree = "<group>"; };
+		40433FD6169D628C0057020F /* ATMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATMainViewController.m; sourceTree = "<group>"; };
+		40433FD7169D628C0057020F /* ATMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATMainViewController.xib; sourceTree = "<group>"; };
+		40433FDA169D64E00057020F /* ATFullTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATFullTableViewController.h; sourceTree = "<group>"; };
+		40433FDB169D64E00057020F /* ATFullTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATFullTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +175,7 @@
 		40433F55169CA5B00057020F /* LabelWithFormExample */ = {
 			isa = PBXGroup;
 			children = (
+				40433FD4169D62350057020F /* Resources */,
 				40433FBD169CAD720057020F /* Classes */,
 				40433F56169CA5B00057020F /* Supporting Files */,
 			);
@@ -206,6 +218,7 @@
 		40433F84169CA5FC0057020F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				40433FD0169D61140057020F /* TableView */,
 				40433FB0169CA6F60057020F /* vertical_separator.png */,
 				40433FB1169CA6F60057020F /* horisontal_separator.png */,
 				40433F99169CA6790057020F /* ATLabelWithFormCell.h */,
@@ -257,6 +270,11 @@
 				40433FC1169CADF40057020F /* ATAppDelegate.m */,
 				40433FC2169CADF40057020F /* ATTableViewController.h */,
 				40433FC3169CADF40057020F /* ATTableViewController.m */,
+				40433FD5169D628C0057020F /* ATMainViewController.h */,
+				40433FD6169D628C0057020F /* ATMainViewController.m */,
+				40433FD7169D628C0057020F /* ATMainViewController.xib */,
+				40433FDA169D64E00057020F /* ATFullTableViewController.h */,
+				40433FDB169D64E00057020F /* ATFullTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,6 +286,22 @@
 				40433F73169CA5B10057020F /* LabelWithFormTests */,
 			);
 			name = Example;
+			sourceTree = "<group>";
+		};
+		40433FD0169D61140057020F /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				40433FD1169D618D0057020F /* ATFormTableViewController.h */,
+				40433FD2169D618D0057020F /* ATFormTableViewController.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		40433FD4169D62350057020F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +382,7 @@
 				40433F66169CA5B10057020F /* Default-568h@2x.png in Resources */,
 				40433FB2169CA6F60057020F /* vertical_separator.png in Resources */,
 				40433FB4169CA6F60057020F /* horisontal_separator.png in Resources */,
+				40433FD9169D628C0057020F /* ATMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +432,9 @@
 				40433FC4169CADF40057020F /* ATAddressCell.m in Sources */,
 				40433FC6169CADF40057020F /* ATAppDelegate.m in Sources */,
 				40433FC8169CADF40057020F /* ATTableViewController.m in Sources */,
+				40433FD3169D618D0057020F /* ATFormTableViewController.m in Sources */,
+				40433FD8169D628C0057020F /* ATMainViewController.m in Sources */,
+				40433FDC169D64E00057020F /* ATFullTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

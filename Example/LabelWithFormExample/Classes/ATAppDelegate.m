@@ -7,14 +7,15 @@
 //
 
 #import "ATAppDelegate.h"
-#import "ATTableViewController.h"
+#import "ATMainViewController.h"
 
 @implementation ATAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  ATTableViewController* controller = [[ATTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+  ATMainViewController* controller = [[ATMainViewController alloc] initWithNibName:@"ATMainViewController"
+                                                                            bundle:nil];
   self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
   // Override point for customization after application launch.
   [self.window makeKeyAndVisible];
