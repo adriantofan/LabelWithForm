@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ATFormTableViewController.h"
-@interface ATFullTableViewController : ATFormTableViewController
+#import "ATListViewTextFieldControler.h"
+
+@interface ATFullTableViewController : ATFormTableViewController<ATListViewTextFieldControlerDelegate>
 
 @end

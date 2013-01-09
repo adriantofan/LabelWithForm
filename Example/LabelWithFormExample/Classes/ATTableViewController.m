@@ -8,6 +8,7 @@
 
 #import "ATTableViewController.h"
 #import "ATListViewTextFieldControler.h"
+#import "ATAddressCell.h"
 
 @interface ATTableViewController (){
   NSMutableArray* models_;}
