@@ -187,19 +187,25 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
 }
 
 #pragma  mark - Frame related manipulations
-
--(void)setFrame:(CGRect)frame{
-  // seems to be set to no by the TableView
-  self.contentView.clipsToBounds = YES;
-  [super setFrame:frame];
+-(void)updateLayout{
   CGRect formFrame = listView_.frame;
   formFrame.size.width = self.contentView.frame.size.width - formFrame.origin.x;
-  formFrame.size.height = 200.0;
+  formFrame.size.height = self.contentView.frame.size.height;
   [listView_ setFrame:formFrame];
   self.summaryLabel.frame = sumaryLabelFrame1(self.summaryText, self.listView.frame.size.width);
   CGRect separatorFrame = self.verticalSeparator.frame;
   separatorFrame.size.height = self.contentView.frame.size.height;
   self.verticalSeparator.frame = separatorFrame;
+}
+-(void)setFrame:(CGRect)frame{
+  // seems to be set to no by the TableView
+  self.contentView.clipsToBounds = YES;
+  [super setFrame:frame];
+  [self updateLayout];
+}
+-(void)layoutSubviews{
+  [super layoutSubviews];
+  [self updateLayout];
 }
 
 

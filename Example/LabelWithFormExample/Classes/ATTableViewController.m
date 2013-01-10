@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  models_ = [NSMutableArray arrayWithObject:@3];
+  models_ = [NSMutableArray arrayWithArray:@[@3,@3]];
   self.navigationItem.rightBarButtonItem = self.editButtonItem;
   [self.tableView registerClass:[ATAddressCell  class] forCellReuseIdentifier:@"ATAddressCellId"];
 }
@@ -31,18 +31,20 @@
   [[self tableView] endUpdates];
 }
 
+#pragma mark - TableView Data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
   return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  return 1;
+  return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   ATAddressCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ATAddressCellId"];
   cell.textFieldControllerDelegate = self;
-  [cell setContent:@{@"s":@"s"}];
+  [cell setContent:@{@"s":@"s"}];   
   cell.label.text = @"Address";
   return cell;
 }
@@ -59,13 +61,18 @@
   return YES;
 }
 
+#pragma mark - TableView Delegate
+
+
+
 #pragma mark - ATListViewTextFieldControlerDelegate
 
 -(void)textFieldControler:(ATListViewTextFieldControler*)controller
             commitEditing:(ATListViewTextFieldControlerDelegateChange)change
                 textField:(UITextField*)textField
                   oldText:(NSString*)oldText
-                  newText:(NSString*)newText{
+                  newText:(NSString*)newText
+                     line:(NSInteger)line{
   ATLabelWithFormCell* cell = (ATLabelWithFormCell*)controller.context;
   NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
   NSInteger count;

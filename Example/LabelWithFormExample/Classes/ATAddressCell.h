@@ -7,6 +7,7 @@
 //
 
 #import "ATLabelWithFormCell.h"
+enum {kFirstName, kLastName, kAddressLine, kPostalCode, kCity, kState, kCountry};
 
 @interface ATAddressCell : ATLabelWithFormCell
 

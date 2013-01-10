@@ -16,11 +16,24 @@
 
 -(ATLineContainer*)createNewDynamicLine;
 
+// returns how many empty lines are in range
+-(NSInteger) emptyLinesCountInRange:(NSRange)range;
 @end
+
 @implementation ATListViewTextFieldControler
 @synthesize listView = listView_, delegate = delegate_, context = context_, dynamicRange = dynamicRange_, dynamicTag = dynamicTag_ ;
 @synthesize lineContainerFactory = lineContainerFactory_;
+
 #pragma mark - Helpers
+-(NSInteger) emptyLinesCountInRange:(NSRange)range{
+  NSInteger count = 0;
+  ATTextFieldLineContainer * line;
+  for (NSInteger k = range.location ; NSLocationInRange(k,range); k++) {
+    line = [self.listView.lines objectAtIndex:k];
+    if ([line.textField.text isEqualToString:@""]) count++;
+  }
+  return count;
+}
 
 -(ATLineContainer*)lineAtIndex:(NSInteger)index{
   NSArray *lines = [self.listView lines];
@@ -60,7 +73,6 @@
 }
 
 
-#pragma mark - UITextFieldDelegate
 // TODO: -> this doesen't allow styling only by subclassing of line ... is it as bad as that?
 -(ATLineContainer*)createNewDynamicLine{
   if (lineContainerFactory_) {
@@ -69,50 +81,72 @@
   return  nil;
 }
 
+#pragma mark - UITextFieldDelegate
+
+-(void)textFieldDidBeginEditing:(UITextField*) textField{
+  NSInteger index = [self.listView lineIndexForView:textField];
+  if ([delegate_ respondsToSelector:@selector(textFieldControler:commitEditing:textField:oldText:newText:line:)]) {
+    [self.delegate textFieldControler:self
+                        commitEditing:ATListViewTextFieldControlerDelegateStartEditingLineChange
+                            textField:textField
+                              oldText:textField.text
+                              newText:textField.text
+                                 line:index];
+    
+  }
+
+}
 -(void)textFieldDidEndEditing:(UITextField *)textField{
   NSInteger index = [self.listView lineIndexForView:textField];
   if([textField.text isEqualToString:@""] && // line is empty
-     (dynamicRange_.length > 2) && // there are at least two lines in dynamic range
-     NSLocationInRange(index,dynamicRange_) && // and the line is dynamic
-     ((NSMaxRange(dynamicRange_) -1)!= index ) // it is not the last one in list 
+     ([self emptyLinesCountInRange:self.dynamicRange] > 1) && // there are at least two lines in dynamic range
+     NSLocationInRange(index,dynamicRange_)  // and the line is dynamic
      ){
     [self.listView deleteLineAtIndex:index animated:YES];
     dynamicRange_.length -= 1;
-    if ([delegate_ respondsToSelector:@selector(textFieldControler:commitEditing:textField:oldText:newText:)]) {
+    if ([delegate_ respondsToSelector:@selector(textFieldControler:commitEditing:textField:oldText:newText:line:)]) {
       [self.delegate textFieldControler:self
                           commitEditing:ATListViewTextFieldControlerDelegateDeleteChange
                               textField:textField
                                 oldText:textField.text
-                                newText:textField.text];
-
+                                newText:textField.text
+                                   line:index];
+      
     }
   }
 }
-
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
   NSString *oldText = textField.text;
   NSMutableString *newText = [textField.text mutableCopy];
   [newText replaceCharactersInRange:range withString:string];
   NSInteger lineIndex = [self.listView lineIndexForView:textField];
-  BOOL delegateRecievesChanges = [self.delegate respondsToSelector:@selector(textFieldControler:commitEditing:textField:oldText:newText:)];
+  BOOL delegateRecievesChanges = [self.delegate respondsToSelector:@selector(textFieldControler:commitEditing:textField:oldText:newText:line:)];
   
   if (delegateRecievesChanges) {
     [self.delegate textFieldControler:self
                         commitEditing:ATListViewTextFieldControlerDelegateUpdateChange
                             textField:textField
                               oldText:oldText
-                              newText:newText];
+                              newText:newText
+                                 line:lineIndex];
   }
   if (NSLocationInRange(lineIndex,self.dynamicRange)) { // we are in the dynamic range
     if([newText length] && ([oldText length] == 0)){ // some text from no text
       if ((NSMaxRange(dynamicRange_) - lineIndex) == 1 ){ // it is the last dynamic field
         [self insertLineWithText:@"" atIndexInDynamicList:(lineIndex + 1) animated:YES];
-        [self.delegate textFieldControler:self
-                            commitEditing:ATListViewTextFieldControlerDelegateAddChange
-                                textField:textField
-                                  oldText:oldText
-                                  newText:newText];
+        if (delegateRecievesChanges){
+          int64_t delayInSeconds = 0.0;
+          dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+          dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.delegate textFieldControler:self
+                                commitEditing:ATListViewTextFieldControlerDelegateAddChange
+                                    textField:textField
+                                      oldText:@""
+                                      newText:@""
+                                         line:lineIndex + 1];
+          });
+        }
       }
     }
   }

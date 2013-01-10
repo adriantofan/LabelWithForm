@@ -11,6 +11,7 @@
 
 
 typedef enum{
+  ATListViewTextFieldControlerDelegateStartEditingLineChange,
   ATListViewTextFieldControlerDelegateAddChange,
   ATListViewTextFieldControlerDelegateDeleteChange,
   ATListViewTextFieldControlerDelegateUpdateChange,
@@ -22,7 +23,8 @@ typedef enum{
             commitEditing:(ATListViewTextFieldControlerDelegateChange)change
                 textField:(UITextField*)textField
                   oldText:(NSString*)oldText
-                  newText:(NSString*)newText;
+                  newText:(NSString*)newText
+                     line:(NSInteger)line;
 
 @end
 
@@ -59,5 +61,4 @@ typedef enum{
 -(void)setText:(NSString*)text forIndexInDynamicList:(NSInteger)index;
 // Inserts new line with |text| in the dynamic range at index
 -(void)insertLineWithText:(NSString*) text atIndexInDynamicList:(NSInteger)index animated:(BOOL)animated;
-
 @end

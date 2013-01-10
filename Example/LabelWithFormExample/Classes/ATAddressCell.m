@@ -12,9 +12,9 @@
 #import "ATTwoTextFieldsLineContainer.h"
 #import "ATListView.h"
 
-enum {kFirstName, kLastName, kAddressLine, kPostalCode, kCity, kState, kCountry};
 
 @implementation ATAddressCell
+
 // 1
 -(ATListViewTextFieldControler*) textFieldController{
   BOOL needsSetup = textFieldController_ == nil;
@@ -39,19 +39,23 @@ enum {kFirstName, kLastName, kAddressLine, kPostalCode, kCity, kState, kCountry}
 // 3
 -(void)setContent:(NSDictionary*)content {
   textFieldController_ = nil;
-  NSArray* addressLines = [content objectForKey:@(kAddressLine)];
-  NSString *firstLine = [addressLines objectAtIndex:0];
-  ATTextFieldLineContainer* address1 = [[ATTextFieldLineContainer alloc] init];
   ATTwoTextFieldsLineContainer* cityState = [[ATTwoTextFieldsLineContainer alloc] init];
   ATTwoTextFieldsLineContainer* zipCountry = [[ATTwoTextFieldsLineContainer alloc] init];
   
   self.textFieldController.dynamicTag = kAddressLine;
-  self.textFieldController.dynamicRange = NSMakeRange(0,1);
+  NSArray* addresess = [content objectForKey:@(kAddressLine)];
+  NSMutableArray* lines = [[NSMutableArray alloc] initWithCapacity:[addresess count]];
+  self.textFieldController.dynamicRange = NSMakeRange(0,[addresess count]);
+
+  for (NSString * address in addresess) {
+    ATTextFieldLineContainer* addressLine = [[ATTextFieldLineContainer alloc] init];
+    addressLine.textField.text = address;
+    addressLine.textField.placeholder = NSLocalizedString(@"Address", @"Address");
+    addressLine.textField.tag = kAddressLine;
+    addressLine.textField.delegate = self.textFieldController;
+    [lines insertObject:addressLine atIndex:[lines count]];
+  }
   
-  address1.textField.text = firstLine;
-  address1.textField.placeholder = NSLocalizedString(@"Address", @"Address");
-  address1.textField.tag = kAddressLine;
-  address1.textField.delegate = self.textFieldController;
   cityState.textFieldOne.text = [content objectForKey:@(kCity)];
   cityState.textFieldOne.placeholder = NSLocalizedString(@"City", @"City");
   cityState.textFieldOne.tag = kCity;
@@ -68,8 +72,10 @@ enum {kFirstName, kLastName, kAddressLine, kPostalCode, kCity, kState, kCountry}
   zipCountry.textFieldTwo.placeholder = NSLocalizedString(@"Country", @"Country");
   zipCountry.textFieldTwo.tag = kCountry;
   zipCountry.textFieldTwo.delegate = self.textFieldController;
-
-  [self.listView setLines:@[address1,cityState,zipCountry]];
+  [lines addObject:cityState];
+  [lines addObject:zipCountry];
+  
+  [self.listView setLines:lines];
   [super setContent:content]; // calls supper at the end in order to prepare context
 }
 
