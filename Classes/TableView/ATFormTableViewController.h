@@ -12,12 +12,12 @@
 
 typedef enum{
   ATSectionEditingStyleNotSet = 0,
-  ATSectionEditingStyleNeverEmpty  = 1<<1, // needs to be shown by default when entering edit mode, cannot be completly deleted
+  ATSectionEditingStyleNeverEmpty  = 1<<1, // needs to be shown by default when entering edit mode, cannot be completly deleted 0 
 
   ATSectionEditingStyleNotList            = 0<<8,
-  ATSectionEditingStyleList               = 1<<8, // is a list of elements that grows automaticaly
-  ATSectionEditingStyleListWithAddButton  = 2<<8, // grows with add button
-  ATSectionEditingStyleStaticOnlyEdit       = 3<<8 , // has static elements, visible only when editing
+  ATSectionEditingStyleList               = 1<<8,    // is a list of elements that grows automaticaly
+  ATSectionEditingStyleListWithAddButton  = 2<<8,    // grows with add button
+  ATSectionEditingStyleStaticOnlyEdit       = 4<<8 , // has static elements, visible only when editing
   
 } ATSectionEditingStyle;
 
