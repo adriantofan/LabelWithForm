@@ -215,6 +215,7 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
 #pragma  mark - Cell lifecycle
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated{
+  self.summaryLabel.text = self.summaryText;
   [super setEditing:editing animated:animated];
   float duration = animated ? 0.3 : -1.0;
   [UIView animateWithDuration:duration animations:^{
