@@ -25,6 +25,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define SumaryLabelFont [UIFont boldSystemFontOfSize:15.0]
 
 #define BackgroundCollor UIColorFromRGB(0xf7f7f7)
+#define SumaryLabelColor [UIColor blackColor]
+#define LabelColor [UIColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0]
 
 #define kVerticalMargin 12.0
 #define kVSeparatorWidth 1.0
@@ -156,8 +158,8 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
     CGRect labelFrame = sumaryLabelFrame1(self.summaryText, self.listView.frame.size.width);
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
     label.font = SumaryLabelFont;
-    label.textColor = [UIColor purpleColor];
-    label.backgroundColor = [UIColor greenColor];
+    label.textColor = SumaryLabelColor;
+    label.backgroundColor = BackgroundCollor;
     label.numberOfLines = 10;
     summaryLabel_ = label;
   }
@@ -171,6 +173,7 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
     label.font = LabelFont;
     label.textAlignment = NSTextAlignmentRight;
     label.backgroundColor = BackgroundCollor;
+    label.textColor = LabelColor;
     label_ = label;
   }
   return label_;
