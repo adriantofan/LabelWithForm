@@ -70,6 +70,10 @@
     [self.tableView endUpdates];
     self.tableView.editing = NO;
     self.tableView.editing = YES;
+    for (NSIndexPath *i in [self.tableView indexPathsForVisibleRows]) {
+      [self updateEditingStyleForCell:[self.tableView cellForRowAtIndexPath:i]
+           atIndexPath:i];
+    }
   }else{
     [self.tableView endEditing:YES];
     self.navigationItem.leftBarButtonItem = nil; // clear cancel button

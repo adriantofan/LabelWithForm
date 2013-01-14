@@ -210,7 +210,7 @@
       [self.tableView insertRowsAtIndexPaths:@[indexPathToAdd]
                             withRowAnimation:UITableViewRowAnimationAutomatic];
       [self.tableView endUpdates];
-      [self updateCell:cell atIndexPath:indexPath];
+      [self updateEditingStyleForCell:cell atIndexPath:indexPath];
     }
     if ((style & ATSectionEditingStyleListWithAddButton) &&
         ![self isAddButonVisibleInSection:indexPath.section]) { // add the Add cell at the end
@@ -320,12 +320,7 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-  if (cell == editingCell_ ){
-    tempEditingCellIndexPath_ = indexPath;
-  }else{
-  }
-}
+
 
 
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -344,18 +339,30 @@
   return UITableViewCellEditingStyleNone;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-  [self updateCell:cell atIndexPath:indexPath];
+  [self updateEditingStyleForCell:cell atIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+  if (cell == editingCell_ ){
+    tempEditingCellIndexPath_ = indexPath;
+  }else{
+  }
 }
 
 //TODO: move this in propper section
--(void)updateCell:(UITableViewCell*) cell atIndexPath:(NSIndexPath*)indexPath{
+-(void)updateEditingStyleForCell:(UITableViewCell*) cell atIndexPath:(NSIndexPath*)indexPath{
   ATSectionEditingStyle style = [self editingStyleForSection:indexPath.section];
   if (style & ATSectionEditingStyleList){
     int modelCount = [self numberOfModelsInSection:indexPath.section];
     if ((indexPath.row == (modelCount - 1)) &&
         [self isEmptyModelAtIndexPath:indexPath]){
       cell.editView.hidden = YES;
-    }else{
+    }
+    if((style & ATSectionEditingStyleNeverEmpty) &&
+          (indexPath.row == (modelCount - 1) == 1)){
+      cell.editView.hidden = YES;
+    }
+    else{
       cell.editView.hidden = NO;
     }
   }  

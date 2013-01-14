@@ -31,6 +31,18 @@ typedef enum{
 // tableView beginEditing / endEditing block
 -(void)updateTableViewCellHeights;
 
+#pragma mark - Subclasses MUST call this methosds apropiately
+// Call this method to update editing styles for cell
+// WARNING: when switching to editing mode this method should be called for all
+// visible cells
+//
+//        for (NSIndexPath *i in [self.tableView indexPathsForVisibleRows]) {
+//          [self updateEditingStyleForCell:[self.tableView cellForRowAtIndexPath:i]
+//                              atIndexPath:i];
+//        }
+
+-(void)updateEditingStyleForCell:(UITableViewCell*) cell atIndexPath:(NSIndexPath*)indexPath;
+
 #pragma mark - model
 #pragma mark - Subclasses MUST overwrite this methods
 // Whatch out when using ! after model change previously computed
