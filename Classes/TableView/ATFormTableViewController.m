@@ -182,8 +182,11 @@
 #pragma mark - Edit session
 
 -(void)editingDidEndedAtIndexPath:(NSIndexPath*)indexPath{
-  UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
   ATSectionEditingStyle style = [self editingStyleForSection:indexPath.section];
+  if (!((style & ATSectionEditingStyleListWithAddButton) ||
+        (style & ATSectionEditingStyleList ))){
+    return;
+  }
   //NSInteger modelCount = [self numberOfModelsInSection:indexPath.section];
   if (((style & ATSectionEditingStyleListWithAddButton) ||
       (style & ATSectionEditingStyleList)) &&
@@ -200,6 +203,10 @@
 -(void)editingInProgressAtIndexPath:(NSIndexPath*)indexPath{
   ATSectionEditingStyle style = [self editingStyleForSection:indexPath.section];
   NSInteger modelCount = [self numberOfModelsInSection:indexPath.section];
+  if (!((style & ATSectionEditingStyleListWithAddButton) ||
+      (style & ATSectionEditingStyleList ))){
+    return;
+  }
   if ((modelCount == (indexPath.row + 1)) &&
       (![self isEmptyModelAtIndexPath:indexPath])){// it is the last item in a editing list that becomed non empty
     if (style & ATSectionEditingStyleList) { // add one empty model at the end
