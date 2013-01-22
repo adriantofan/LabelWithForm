@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4034091A16AECCF80097E439 /* UITableViewCell+athelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4034091916AECCF80097E439 /* UITableViewCell+athelper.m */; };
 		40433F50169CA5B00057020F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40433F4F169CA5B00057020F /* UIKit.framework */; };
 		40433F52169CA5B00057020F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40433F51169CA5B00057020F /* Foundation.framework */; };
 		40433F54169CA5B00057020F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40433F53169CA5B00057020F /* CoreGraphics.framework */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4034091816AECCF80097E439 /* UITableViewCell+athelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+athelper.h"; sourceTree = "<group>"; };
+		4034091916AECCF80097E439 /* UITableViewCell+athelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+athelper.m"; sourceTree = "<group>"; };
 		40433F4B169CA5B00057020F /* LabelWithFormExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabelWithFormExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40433F4F169CA5B00057020F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40433F51169CA5B00057020F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -230,6 +233,8 @@
 				40433F9F169CA6790057020F /* Layout.h */,
 				40433F8F169CA6500057020F /* Separators */,
 				40433F85169CA61D0057020F /* LineContainers */,
+				4034091816AECCF80097E439 /* UITableViewCell+athelper.h */,
+				4034091916AECCF80097E439 /* UITableViewCell+athelper.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -435,6 +440,7 @@
 				40433FD3169D618D0057020F /* ATFormTableViewController.m in Sources */,
 				40433FD8169D628C0057020F /* ATMainViewController.m in Sources */,
 				40433FDC169D64E00057020F /* ATFullTableViewController.m in Sources */,
+				4034091A16AECCF80097E439 /* UITableViewCell+athelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

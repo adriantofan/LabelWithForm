@@ -8,17 +8,7 @@
 
 #import "ATFormTableViewController.h"
 #import "ATListViewTextFieldControler.h"
-@interface UITableViewCell (athelper)
-@property (nonatomic,readonly) UIView* editView;
-@end
-@implementation UITableViewCell (athelper)
--(UIView*)editView{
-  for (UIView *subview in self.subviews) {
-    if ([NSStringFromClass([subview class]) isEqualToString:@"UITableViewCellEditControl"]) return subview;
-  }
-  return nil;
-}
-@end
+#import "UITableViewCell+athelper.h"
 
 @interface ATFormTableViewController (){
   NSMutableDictionary* editingStyles_;
