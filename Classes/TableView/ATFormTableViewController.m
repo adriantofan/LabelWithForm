@@ -170,7 +170,18 @@
 -(void)configureStaticSectionForEngingEditing:(NSInteger)section{
 }
 #pragma mark - Edit session
-
+// When the tableView ends showing a cell, the delegate
+// checks to see if the cell is the editing cell, if it
+// is it saves in to tempEditingCellIndexPath_
+// 
+-(NSIndexPath*)indexPathForEditingCell{
+  NSIndexPath* indexPath = [self.tableView indexPathForCell:editingCell_];
+  if (nil == indexPath ) {
+    return tempEditingCellIndexPath_;
+  }else{
+    return indexPath;
+  }
+}
 -(void)editingDidEndedAtIndexPath:(NSIndexPath*)indexPath{
   ATSectionEditingStyle style = [self editingStyleForSection:indexPath.section];
   if (!((style & ATSectionEditingStyleListWithAddButton) ||

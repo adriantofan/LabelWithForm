@@ -75,6 +75,9 @@ typedef enum{
 -(void)editingDidEndedAtIndexPath:(NSIndexPath*)indexPath;
 // Call this during an edit section when editing a row when content changed (after model update)
 -(void)editingInProgressAtIndexPath:(NSIndexPath*)indexPath;
+// tryes to keep a reference of editingCell's index path even
+// when the tableView is reused. WARNING: use with care
+-(NSIndexPath*)indexPathForEditingCell;
 
 #pragma mark - SectionEditingStyle
 - (void) setEditingStyle:(ATSectionEditingStyle)style
@@ -89,4 +92,5 @@ typedef enum{
 // Holds the current editing cell. When changes invokes  editingDidEndedAtIndexPath:
 // respectively editingInProgressAtIndexPath:
 @property (nonatomic)  UITableViewCell* editingCell;
+
 @end
