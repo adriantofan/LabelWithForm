@@ -27,7 +27,8 @@
 
 -(void)updateTableViewCellHeights{
   [self.tableView beginUpdates];
-  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+  [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[editingStyles_ count]-1]
+                withRowAnimation:UITableViewRowAnimationAutomatic];
   [self.tableView endUpdates];
 }
 - (void)viewDidLoad
