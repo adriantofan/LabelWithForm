@@ -97,6 +97,28 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
 @synthesize verticalSeparator = verticalSeparator_;
 @synthesize textFieldController = textFieldController_;
 @synthesize textFieldControllerDelegate = textFieldControllerDelegate_;
+@synthesize summaryLabelColor = summaryLabelColor_;
+@synthesize labelColor = labelColor_;
+@synthesize bgCollor = bgCollor_;
+
+-(UIColor*)summaryLabelColor{
+  if (nil == summaryLabelColor_ ) {
+    summaryLabelColor_ = SumaryLabelColor;
+  }
+  return summaryLabelColor_;
+}
+-(UIColor*)labelColor{
+  if (nil == labelColor_) {
+    labelColor_ = LabelColor;
+  }
+  return labelColor_;
+}
+-(UIColor*)bgCollor{
+  if (nil == bgCollor_) {
+    bgCollor_ = BackgroundCollor;
+  }
+  return bgCollor_;
+}
 
 #pragma  mark - class methods
 
@@ -137,6 +159,14 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
   }
   return textFieldController_;
 }
+-(void)didMoveToSuperview{
+  [super didMoveToSuperview];
+  self.summaryLabel.backgroundColor = self.bgCollor;
+  self.summaryLabel.textColor = self.summaryLabelColor;
+  self.label.backgroundColor = self.bgCollor;
+  self.label.textColor = self.labelColor;
+  
+}
 
 -(ATVerticalSeparator *)verticalSeparator{
   if (!verticalSeparator_) {
@@ -158,8 +188,6 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
     CGRect labelFrame = sumaryLabelFrame1(self.summaryText, self.listView.frame.size.width);
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
     label.font = SumaryLabelFont;
-    label.textColor = SumaryLabelColor;
-    label.backgroundColor = BackgroundCollor;
     label.numberOfLines = 10;
     summaryLabel_ = label;
   }
@@ -172,8 +200,6 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
     label.font = LabelFont;
     label.textAlignment = NSTextAlignmentRight;
-    label.backgroundColor = BackgroundCollor;
-    label.textColor = LabelColor;
     label_ = label;
   }
   return label_;

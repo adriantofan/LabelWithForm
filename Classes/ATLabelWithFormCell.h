@@ -30,4 +30,8 @@
 +(CGFloat)cellHeigh:(BOOL)editing contentWidth:(float)contentWidth  withText:(NSString*)text rowCount:(int)rowCount;
 // Reload content in block
 -(void)setContent:(NSDictionary*)content;
+@property(nonatomic,retain) UIColor *summaryLabelColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic,retain) UIColor *labelColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic,retain) UIColor *bgCollor UI_APPEARANCE_SELECTOR;
+
 @end
