@@ -14,7 +14,7 @@
 
 -(id)initWithFrame:(CGRect)frame{
   if (self = [super initWithFrame:frame]) {
-    [self addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"horisontal_separator"]]];
+    [self addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"vertical_separator"]]];
   }
   return self;
 }
