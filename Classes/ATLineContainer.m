@@ -27,7 +27,7 @@
 // Saves layoutRect_, subclasses should relayout
 -(void)layoutSubviewsInRect:(CGRect) layoutRect{
   layoutRect_ = layoutRect;
-  CGRect frame = CGRectMake(0.0, layoutRect.origin.y + layoutRect.size.height - 1.0, layoutRect.size.width, 1.0);
+  CGRect frame = CGRectMake(0.0, layoutRect.origin.y + layoutRect.size.height - 0.5, layoutRect.size.width, 0.5);
   self.separator.frame = frame;
 }
 -(ATHorizontalSeparator*)separator{
