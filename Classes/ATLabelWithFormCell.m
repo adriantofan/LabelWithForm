@@ -53,10 +53,14 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
   float width = contentWidth  - kEdgeSpacerWidth - 2* kEdgeSpacerWidth;
-  CGSize size = [text sizeWithFont:SumaryLabelFont
-                 constrainedToSize:CGSizeMake(width,1000.0)
-                     lineBreakMode:NSLineBreakByWordWrapping];
-  CGRect frame = CGRectMake(kSummaryLabelX,kSummaryLabelY,width,size.height);
+//  [text sizeWithFont:SumaryLabelFont
+//   constrainedToSize:CGSizeMake(width,1000.0)
+//       lineBreakMode:NSLineBreakByWordWrapping];
+  CGRect boundingRect = [text boundingRectWithSize:CGSizeMake(width,1000.0)
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:@{NSFontAttributeName:SumaryLabelFont}
+                                           context:nil];
+  CGRect frame = CGRectMake(kSummaryLabelX,kSummaryLabelY,width,boundingRect.size.height);
   return frame;
 }
 
