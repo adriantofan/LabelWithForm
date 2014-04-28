@@ -15,7 +15,7 @@
 fieldSeparator = fieldSeparator_;
 - (ATVerticalSeparator*) fieldSeparator{
   if (!fieldSeparator_) {
-    fieldSeparator_ = [[ATVerticalSeparator alloc] initWithFrame:CGRectMake(0.0, 0.0, 0.5, 1.0)];
+    fieldSeparator_ = [[ATVerticalSeparator alloc] initWithFrame:CGRectMake(0.0, 0.0, (IS_RETINA?0.5:1.0), 1.0)];
   }
   return fieldSeparator_;
 }
@@ -47,7 +47,7 @@ fieldSeparator = fieldSeparator_;
   self.textFieldOne.frame = frame;
   frame.origin.x += (2*kEdgeSpacerWidth + fieldWidth + self.fieldSeparator.frame.size.width) ;
   self.textFieldTwo.frame = frame;
-  CGRect separatorFrame = CGRectMake(frame.origin.x - self.fieldSeparator.frame.size.width -kEdgeSpacerWidth , layoutRect.origin.y , 0.5, layoutRect.size.height);
+  CGRect separatorFrame = CGRectMake(frame.origin.x - self.fieldSeparator.frame.size.width -kEdgeSpacerWidth , layoutRect.origin.y , (IS_RETINA?0.5:1.0), layoutRect.size.height);
   self.fieldSeparator.frame = separatorFrame;
 }
 @end

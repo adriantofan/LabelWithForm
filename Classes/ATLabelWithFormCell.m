@@ -29,10 +29,10 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define LabelColor [UIColor colorWithRed:0.32 green:0.4 blue:0.57 alpha:1.0]
 
 #define kVerticalMargin 12.0
-#define kVSeparatorWidth 0.5
+#define kVSeparatorWidth (IS_RETINA?0.5:1.0)
 
-#define kVSeparatorWidth 0.5
-#define kVSeparatorHeight 0.5
+#define kVSeparatorWidth (IS_RETINA?0.5:1.0)
+#define kVSeparatorHeight (IS_RETINA?0.5:1.0)
 #define kVSeparatorX (kLabelX + kLabelWidth + kEdgeSpacerWidth)
 #define kVSeparatorY 0.0
 
