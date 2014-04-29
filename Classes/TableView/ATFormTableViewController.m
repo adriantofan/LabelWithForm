@@ -263,7 +263,7 @@
 }
 - (ATSectionEditingStyle)editingStyleForSection:(NSInteger)section{
   NSNumber *style = [editingStyles_ objectForKey:@(section)];
-  return style? [style integerValue] : ATSectionEditingStyleNotSet;
+  return style? [style intValue] : ATSectionEditingStyleNotSet;
 }
 
 #pragma mark - Table view data source
@@ -362,7 +362,7 @@
 -(void)updateEditingStyleForCell:(UITableViewCell*) cell atIndexPath:(NSIndexPath*)indexPath{
   ATSectionEditingStyle style = [self editingStyleForSection:indexPath.section];
   if (style & ATSectionEditingStyleList){
-    int modelCount = [self numberOfModelsInSection:indexPath.section];
+    NSInteger modelCount = [self numberOfModelsInSection:indexPath.section];
     if ((indexPath.row == (modelCount - 1)) &&
         [self isEmptyModelAtIndexPath:indexPath]){
       cell.editView.hidden = YES;

@@ -126,7 +126,7 @@ CGRect sumaryLabelFrame1(NSString* text, float contentWidth){
 
 #pragma  mark - class methods
 
-+(CGFloat)cellHeigh:(BOOL)editing contentWidth:(float)contentWidth  withText:(NSString*)text rowCount:(int)rowCount{
++(CGFloat)cellHeigh:(BOOL)editing contentWidth:(float)contentWidth  withText:(NSString*)text rowCount:(NSInteger)rowCount{
   if (editing) {
     return kCellRowHeight * rowCount;
   }else{

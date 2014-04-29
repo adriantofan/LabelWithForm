@@ -121,7 +121,7 @@
     NSMutableArray *newLines = [NSMutableArray arrayWithArray:lines_];
     [newLines insertObject:line atIndex:index];
     lines_ = [NSArray arrayWithArray:newLines];
-    for (int k = index; k < [lines_ count]; k++) { // slide everyhing down
+    for (NSInteger k = index; k < [lines_ count]; k++) { // slide everyhing down
       ATLineContainer* lineToSlide  = [lines_ objectAtIndex:k];
       for (UIView * viewToSlide in [lineToSlide views]) {
         frame = [viewToSlide frame];

@@ -27,7 +27,7 @@
 // sets up the ATListViewTextFieldControlerDelegate's context to be self
 @property (nonatomic,weak) id <ATListViewTextFieldControlerDelegate> textFieldControllerDelegate;
 
-+(CGFloat)cellHeigh:(BOOL)editing contentWidth:(float)contentWidth  withText:(NSString*)text rowCount:(int)rowCount;
++(CGFloat)cellHeigh:(BOOL)editing contentWidth:(float)contentWidth  withText:(NSString*)text rowCount:(NSInteger)rowCount;
 // Reload content in block
 -(void)setContent:(NSDictionary*)content;
 @property(nonatomic,retain) UIColor *summaryLabelColor UI_APPEARANCE_SELECTOR;
